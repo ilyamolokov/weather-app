@@ -1,0 +1,69 @@
+{% extends "weather/base.html" %}
+{% block title %}Прогноз погоды{% endblock %}
+{% block content %}
+    {% for city in city_weather_data %}
+      {% if forloop.first %}
+        <div class="background">
+          <div class="main-div">
+            <div class="head-div">
+              <a href="{% url 'weather:city_delete' slug=city.slug %}" class="head-name"><i class="fas fa-times"></i></a>
+              {% if city.rus_name %}
+                <a href="{% url 'weather:weather_detail' slug=city.slug %}" class="head-name">{{city.rus_name|capfirst}}</a>
+              {% else %}
+                <a href="{% url 'weather:weather_detail' slug=city.slug %}" class="head-name">{{city.name|capfirst}}</a>
+              {% endif %}
+            </div>
+            <figure class="icon-box-1">
+              <img src="http://openweathermap.org/img/w/{{city.icon}}.png" alt="weather-icon">
+            </figure>
+            <div class="main-temperature">
+              {% if city.temperature > 0 %}
+                <p>+{{city.temperature}}°C</p>
+              {% elif city.temperature < 0 %}
+                <p>{{city.temperature}}°C</p>
+              {% elif city.temperature == 0 %}
+                <p>{{city.temperature}}°C</p>
+              {% endif %}
+            </div>
+            <div class="vl"></div>
+            <div class="main-left-side">
+              <p><small style="font-size:20px;" class="custom-string">{{city.condition|capfirst}}</small></p>
+              <p>Ветер: <small class="custom-string">{{city.wind}} м/c</small></p>
+              <p>Влажность: <small class="custom-string">{{city.humidity}}%</small></p>
+            </div>
+            <div class="main-right-side">
+              <p>Минимальная температура: <small class="custom-string">{{city.temp_min}} °C</small></p>
+              <p>Максимальная температура: <small class="custom-string">{{city.temp_max}} °C</small></p>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="other-cities">
+          <a href="{% url 'weather:city_delete' slug=city.slug %}"><i class="fas fa-times"></i></a>
+          <div class="icon-box-2">
+            <img src="http://openweathermap.org/img/w/{{city.icon}}.png" alt="weather-icon">
+          </div>
+          <div class="info-box">
+            {% if city.rus_name %}
+              <a href="{% url 'weather:weather_detail' slug=city.slug %}">{{city.rus_name|capfirst}}</a>
+            {% else %}
+              <a href="{% url 'weather:weather_detail' slug=city.slug %}">{{city.name|capfirst}}</a>
+            {% endif %}
+            {% if city.temperature >= 0 %}
+              <p class="custom-string"style="margin-top:17px;">+{{city.temperature}} °C</p>
+            {% else %}
+              <p class="custom-string"style="margin-top:17px;">{{city.temperature}} °C</p>
+            {% endif %}
+            <p style="font-size:19px;color:black;margin-bottom:5px;">{{city.condition|capfirst}}</p>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% if city_weather_data|length < 5 %}
+      <div class="other-cities">
+        <div class="add-new-cities">
+          <a href="{% url 'weather:city_create' %}" style="text-decoration:none;"><i class="far fa-plus-square"></i> <h4 style="display:inline;">Добавить город</h4></a>
+        </div>
+      </div>
+    {% endif %}
+{% endblock %}

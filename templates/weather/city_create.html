@@ -1,0 +1,15 @@
+{% extends "weather/base.html" %}
+{% block title %}Добавить{% endblock %}
+{% block content %}
+  <form method="POST">
+    <h4 style="margin-left:-20px;">Добавить город</h4>
+    <div class="city-form">
+      <p class="comments-1">прим. barcelona</p>
+      {% csrf_token %}
+      {{form.as_p }}
+      <p class="comments-2">прим. Барселона</p>
+      <input type="submit" class="btn btn-success" value="Create post">
+    </div>
+  </form>
+
+{% endblock %}

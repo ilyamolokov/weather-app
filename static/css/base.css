@@ -1,0 +1,254 @@
+body {
+    background-color:#f1f1f1;
+}
+.container {
+    margin-top:15px;
+    height: 700px;
+    font-family: 'Noto Sans', sans-serif;
+}
+.background {
+    margin-top: 10px;
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.44);
+    float:left;
+    width: 475px;
+    height: 49%;
+    border-radius: 4px;
+    background-image: url("/static/images/map-of-moscow2.png");
+}
+.navbar {
+    background-color:#28a745;
+}
+.background > .main-div {
+    font-size: 18px;
+    margin-top:19px;
+    margin-left:20px;
+    width: 435px;
+    height: 305px;
+    border-radius: 6px;
+    background-color: white;
+    color:#696969;
+}
+.other-cities {
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.44);
+    border-radius:8px;
+    float:right;
+    width:55%;
+    height: 130px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding-left:15px;
+}
+
+.info-box {
+    margin-right: 120px;
+    margin-left:120px;
+    text-align:center;
+}
+.other-cities > .icon-box-2 {
+    border:1px solid #858585;
+    border-radius: 15px;
+    margin-top:39px;
+    margin-right:17px;
+}
+.custom-string {
+   font-size:22px;
+   color:black;
+}
+.change-delete {
+    margin-left:15px;
+    font-size:19px;
+}
+.vl {
+    border-left: 1px solid #858585;
+    height:130px;
+    position: relative;
+    left: 180px;
+    top:30px;
+}
+.main-left-side {
+    margin-left:10px;
+    margin-top:-125px;
+    width:40%;
+}
+.main-right-side {
+    margin-top:-157px;
+    width:55%;
+    float:right;
+}
+.head-div > .head-name {
+    margin-left:5px;
+}
+.head-div > a {
+    font-size:24px;
+    margin-left:10px;
+}
+.navbar > p {
+    margin-bottom:5px;
+    color:white;
+}
+.info-detail {
+    color:#696969
+}
+.icon-box-1 {
+    margin-top:10px;
+    margin-left:5px;
+    border:1px solid #858585;
+    float:left;
+    width:70px;
+    height:70px;
+    border-radius: 15px;
+}
+.icon-detail > img {
+    margin-top:12px;
+    margin-bottom:-19px;
+    border:1px solid #858585;
+    border-radius: 15px;
+    width:70px;
+    height:70px;
+}
+.icon-box-1 > img {
+    width:70px;
+    height:auto;
+}
+.main-temperature {
+    margin-top:10px;
+    color:#708090;
+    font-size:45px;
+}
+.icon-box-2 {
+    float:left;
+}
+.fa-times {
+    margin-top:4px;
+    margin-right:7px;
+    font-size:26px;
+    color:red;
+    float:right;
+}
+.fa-times:hover {
+    color:#B22222;
+}
+.fa-plus-square {
+    margin-top:45px;
+    margin-left:190px;
+    font-size:35px;
+}
+.headline {
+    font-size:23px;
+    margin-bottom:5px;
+    color: black;
+}
+.headline:hover {
+    color: black;
+}
+.add-new-cities {
+    margin-left:-22px;
+}
+.city-form {
+    margin-top:40px;
+    margin-left:-20px;
+}
+.comments-1, .comments-2 {
+  float:right;
+  font-style:italic;
+  color:grey;
+  margin-right:520px;
+}
+.comments-2 {
+  margin-top:-55px;
+}
+.comments-1 {
+  margin-top:40px;
+  margin-right:530px;
+}
+label {
+  display:block;
+}
+@media screen and (max-width:1200px) {
+    .navbar {
+      font-size:30px;
+    }
+    .navbar > a {
+      font-size:30px;
+    }
+    .container {
+      position: absolute;
+      left:24%;
+      right:25%;
+    }
+    .other-cities {
+      width:480px;
+      margin-right:451px;
+      margin-bottom:2px;
+      margin-top:15px;
+    }
+    .add-new-cities > a > h4 {
+      font-size:23px;
+      margin-right:10px;
+    }
+    .fa-plus-square {
+      font-size:29px;
+      margin-left:150px;
+    }
+    .comments-1 {
+      margin-right:365px;
+    }
+    .comments-2 {
+      margin-right:355px;
+    }
+}
+@media screen and (max-width:992px) {
+    .other-cities {
+      width:480px;
+      margin-right:211px;
+    }
+    .add-new-cities > a > h4 {
+      font-size:27px;
+      margin-right:10px;
+    }
+    .fa-plus-square {
+      font-size:32px;
+      margin-left:130px;
+    }
+    .comments-1 {
+      margin-right:125px;
+    }
+    .comments-2 {
+      margin-right:115px;
+    }
+}
+@media screen and (max-width:768px) {
+    .other-cities {
+      width:480px;
+      margin-right:31px;
+    }
+    .add-new-cities > a > h4 {
+      font-size:23px;
+      margin-right:10px;
+    }
+    .fa-plus-square {
+      font-size:29px;
+      margin-left:150px;
+    }
+    .comments-1 {
+      margin-right:-55px;
+    }
+    .comments-2 {
+      margin-right:-70px;
+    }
+}
+@media screen and (max-width:720px) {
+    .other-cities {
+      width:480px;
+      margin-right:31px;
+    }
+    .add-new-cities > a > h4 {
+      font-size:23px;
+      margin-right:10px;
+    }
+    .fa-plus-square {
+      font-size:29px;
+      margin-left:150px;
+    }
+}

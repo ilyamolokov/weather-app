@@ -1,0 +1,32 @@
+{% extends "weather/base.html" %}
+
+{% block title %}
+  {% if city_weather_data.rus_name %}
+    {{city_weather_data.rus_name|capfirst}}
+  {% else %}
+    {{city_weather_data.name|capfirst}}
+  {% endif %}
+{% endblock %}
+
+
+{% block content %}
+  {% if city_weather_data.rus_name %}
+    <h3 style="display:inline;">{{city_weather_data.rus_name|capfirst}}</h3>
+  {% else %}
+    <h3 style="display:inline;">{{city_weather_data.name|capfirst}}</h3>
+  {% endif %}
+  <a class="change-delete" href="{% url 'weather:city_edit' slug=city_weather_data.slug %}">Изменить</a>
+  <a class="change-delete" href="{% url 'weather:city_delete' slug=city_weather_data.slug %}" style="color:red;">Удалить</a>
+  <div class="icon-detail">
+    <img src="http://openweathermap.org/img/w/{{city_weather_data.icon}}.png" alt="weather-icon">
+  </div>
+  <br>
+  <p style="font-size:33px;">{{city_weather_data.temperature}} °C</p>
+  <p>{{city_weather_data.condition|capfirst}}</p>
+  <div class="info-detail">
+    <p>Ветер: <small class="custom-string">{{city_weather_data.wind}} м/c</small></p>
+    <p>Влажность: <small class="custom-string">{{city_weather_data.humidity}}%</small></p>
+    <p>Минимальная температура: <small class="custom-string">{{city_weather_data.temp_min}} °C</small></p>
+    <p>Максимальная температура: <small class="custom-string">{{city_weather_data.temp_max}} °C</small></p>
+  </div>
+{% endblock %}
